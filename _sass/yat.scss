@@ -16,20 +16,22 @@ $background-color: #fff !default;
 $grey-color:       #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
 $grey-color-dark:  darken($grey-color, 25%) !default;
-
+$gray-200: #e9ecef !default;
+$white: #fff !default;
+$primary: #fed136 !default;
 $white-color: #fdfdfd !default;
 
 $table-text-align: left !default;
 
 $header-height: $base-line-height * $base-font-size * 2.85 !default;
-$header-text-color: invert($theme-color) !default;
+$header-text-color: #000 !default;
 $header-background-color: $theme-color !default;
 
 $footer-height: $header-height * 1.05 !default;
 $footer-text-color: lighten(invert($theme-color), 25%) !default;
 $footer-background-color: darken($theme-color, 5%) !default;
 
-$banner-height: 640px !default;
+$banner-height: 400px !default;
 $banner-text-color: lighten($white-color, 0%) !default;
 $banner-background: rgba(0,0,0,0.8) !default;
 
@@ -66,5 +68,9 @@ $on-laptop:        800px !default;
   "misc/common-list",
   "misc/google-translate",
   "misc/gitment",
-  "misc/click-to-top"
+  "misc/click-to-top",
+  "layout/timeline",
+  "layout/profile",
+  "layout/value",
+  "layout/skills"
 ;

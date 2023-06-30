@@ -208,9 +208,13 @@ yat:
 
 # Build settings
 # highlighter: none
+paginate: 5
+
 markdown: kramdown
 kmarkdown:
   input: GFM
+
+permalink: pretty
 
 plugins:
   - jekyll-feed

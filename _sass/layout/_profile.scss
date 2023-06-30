@@ -1,0 +1,29 @@
+#profile {
+    .section-title {
+        text-align: center;
+        margin-bottom: 30px;
+        .section-subheading {
+            font-size: 24px;
+            font-weight: 600;
+        }
+    }
+    .section-body {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        .profile-img {
+            padding: 7px;
+            background: #e9ecef;
+            border-radius: 7px;
+            img {
+                width: 200px;
+                border-radius: 7px;
+            }
+        }
+        .profle-content {
+            width: 50%;
+            margin-left: 10px;
+        }
+    }
+}

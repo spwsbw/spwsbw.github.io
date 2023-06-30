@@ -1,0 +1,28 @@
+timeline:
+  title: "Timeline"
+  text: "Timeline"
+  section: timeline
+  # left is the default
+  #start_align: "left"
+  events:
+    - title: "Lorem Ipsum \nLorem Ipsum is simply"
+      year: "Mar 2013"
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an ***unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived***"
+      image: assets/img/timeline/1.jpg
+      alt:
+    - title: "Lorem Ipsum Lorem"
+      year: "Dec 2014"
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, ***remaining essentially*** unchanged."
+      image: assets/img/timeline/1.jpg
+      alt:
+    - title: "Lorem Ipsum"
+      year: "Dec 2017"
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but ***also the leap into electronic*** typesetting, remaining essentially"
+      image: assets/img/timeline/3.jpg
+      alt: image alt text
+    - title: "Lorem Ipsum is simply dummy text"
+      year: "Jul 2020"
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially Lorem Ipsum is simply dummy text."
+      image: assets/img/timeline/4.jpg
+      alt: image alt text
+  end: "Lorem"

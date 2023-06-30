@@ -1,0 +1,40 @@
+#skills {
+    margin-top: 40px;
+    .section-title {
+        text-align: center;
+        margin-bottom: 30px;
+        .section-subheading {
+            font-size: 24px;
+            font-weight: 600;
+        }
+    }
+    .section-body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .skill-wrap {
+            margin-bottom: 30px;
+            .skill-img {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                margin-bottom: 10px;
+                .img-60 {
+                    width: 60px;
+                }
+                .img-40 {
+                    height: 40px;
+                }
+                .img-w-65 {
+                    width: 65px;
+                }
+            }
+            .skill-desc {
+                width: 90%;
+                text-align: center;
+            }
+        }
+    }
+}
