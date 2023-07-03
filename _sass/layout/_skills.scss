@@ -1,5 +1,5 @@
 #skills {
-    margin-top: 40px;
+    margin-top: 100px;
     .section-title {
         text-align: center;
         margin-bottom: 30px;
@@ -14,7 +14,7 @@
         justify-content: center;
         flex-direction: column;
         .skill-wrap {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             .skill-img {
                 display: flex;
                 justify-content: center;
@@ -32,7 +32,8 @@
                 }
             }
             .skill-desc {
-                width: 90%;
+                width: 85%;
+                margin: auto;
                 text-align: center;
             }
         }

@@ -1,0 +1,80 @@
+#projects {
+    margin-top: 100px;
+    img {
+        height: auto;
+        max-width: 100%;
+        vertical-align: middle;
+    }
+    .section-title {
+        text-align: center;
+        margin-bottom: 30px;
+        .section-subheading {
+            font-size: 24px;
+            font-weight: 600;
+        }
+    }
+
+    .section-body {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+
+        .card {
+            background-color: white;
+            border-radius: 0.25rem;
+            box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            @media(min-width: 40rem) {
+                width: 45%;
+            }
+            @media(min-width: 56rem) {
+                width: 30%;
+            }
+            .card_content {
+                display: flex;
+                flex: 1 1 auto;
+                flex-direction: column;
+                padding: 1rem;    
+                .card_title {
+                    font-size: 1.25rem;
+                    font-weight: 300;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                }
+                .card_text {
+                    flex: 1 1 auto;
+                    font-size: 0.875rem;
+                    line-height: 1.5;
+                    margin-bottom: 1.25rem;
+                }
+            }
+            .card_image {
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-top-left-radius: 0.25rem;
+                border-top-right-radius: 0.25rem;
+                filter: contrast(70%);
+                overflow: hidden;
+                position: relative;
+                transition: filter 0.5s cubic-bezier(.43, .41, .22, .91);
+                background-image: url(/assets/img/timeline/1.jpg);
+                &::before {
+                    content: "";
+                    display: block;
+                    padding-top: 56.25%; // 16:9 aspect ratio
+                }
+                @media(min-width: 40rem) {
+                    &::before {
+                        padding-top: 66.6%; // 3:2 aspect ratio
+                    }
+                }
+            }
+        }
+    }
+}

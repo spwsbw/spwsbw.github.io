@@ -190,6 +190,10 @@ pre {
   @extend %clearfix;
 }
 
+.wrapper-1024 {
+  @extend .wrapper;
+  max-width: 1024px;
+}
 
 
 /**
