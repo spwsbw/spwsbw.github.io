@@ -13,7 +13,9 @@
       {% assign items = site.posts | where: field, key %}
       {% for item in items %}
         {% if item != nil %}
-        <li> {% include views/post-item.html %} </li>
+          {% unless item.categories contains "project" %}
+            <li> {% include views/post-item.html %} </li>
+          {% endunless %}
         {% endif %}
       {% endfor %}
     {% endfor %}

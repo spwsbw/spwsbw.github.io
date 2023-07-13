@@ -1,11 +1,19 @@
 #value {
-    margin-top: 100px;
+    padding-top: 100px;
+    padding-bottom: 120px;
     .section-title {
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
         .section-subheading {
+            color: var(--text-03, #162A51);
+            text-align: center;
+            /* HEL 24 */
+            font-family: Helvetica;
             font-size: 24px;
-            font-weight: 600;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 0.96px;
         }
     }
     .section-body {
@@ -13,29 +21,41 @@
         flex-wrap: wrap;
         align-items: flex-start;
         justify-content: center;
-        gap: 10px;
-        .value {
-            width: 230px;
+        gap: 24px;
+        .value-row {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
             align-items: center;
-            .value-icon {
+            justify-content: center;
+            gap: 24px;
+            .value {
+                border: 1px solid var(--line-01, #CDD0DD);
+                width: 500px;
+                height: 324px;
+                padding: 40px 100px 40px 100px;
                 display: flex;
-                justify-content: center;
+                flex-direction: column;
                 align-items: center;
-                width: 80px;
-                height: 80px;
-                background-color: $gray-200;
-                border-radius: 100%;
-            }
-            .value-desc {
-                text-align: center;
-                .value-desc-title {
-                    font-size: 16px;
-                    font-weight: 600;
+                .value-icon {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 130px;
+                    height: 130px;
+                    background-color: var(--text-04, #E5F1FC);;
+                    border-radius: 100%;
+                    margin-bottom: 32px;
                 }
-                .value-desc-content {
-
+                .value-desc {
+                    text-align: center;
+                    .value-desc-title {
+                        margin-bottom: 24px;
+                        font-size: 16px;
+                        font-weight: 600;
+                    }
+                    .value-desc-content {
+    
+                    }
                 }
             }
         }
