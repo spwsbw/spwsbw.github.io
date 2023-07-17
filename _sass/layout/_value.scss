@@ -24,18 +24,23 @@
         gap: 24px;
         .value-row {
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
             justify-content: center;
             gap: 24px;
+            @include media-query(1024px) {
+                flex-wrap: wrap;
+            }
             .value {
                 border: 1px solid var(--line-01, #CDD0DD);
                 width: 500px;
                 height: 324px;
-                padding: 40px 100px 40px 100px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                @include media-query($on-palm) {
+                    width: 90%;
+                    height: 264px;
+                }
                 .value-icon {
                     display: flex;
                     justify-content: center;
@@ -44,17 +49,47 @@
                     height: 130px;
                     background-color: var(--text-04, #E5F1FC);;
                     border-radius: 100%;
+                    margin-top: 40px;
                     margin-bottom: 32px;
+                    @include media-query($on-palm) {
+                        margin-top: 20px;
+                        margin-bottom: 16px;
+                        width: 100px;
+                        height: 100px;
+                    }
                 }
                 .value-desc {
                     text-align: center;
+                    @include media-query($on-palm) {
+                        padding: 10px;
+                    }
                     .value-desc-title {
+                        color: var(--text-01, #222);
+                        text-align: center;
+                        /* HEL 22B */
+                        font-family: Helvetica;
+                        font-size: 22px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
                         margin-bottom: 24px;
-                        font-size: 16px;
-                        font-weight: 600;
+                        @include media-query($on-palm) {
+                            font-size: 18px;
+                        }
                     }
                     .value-desc-content {
-    
+                        color: var(--text-02, #444);
+                        text-align: center;
+
+                        /* HEL 18 */
+                        font-family: Helvetica;
+                        font-size: 18px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 28.8px; /* 160% */
+                        @include media-query($on-palm) {
+                            font-size: 14px;
+                        }
                     }
                 }
             }
