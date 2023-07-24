@@ -186,7 +186,7 @@ You can start by [opening an issue](https://github.com/jeffreytse/jekyll-theme-y
 
 ## License
 
-This theme is licensed under the [MIT license](https://opensource.org/licenses/mit-license.php) © JeffreyTse.
+This theme is licensed under the [MIT license](https://opensource.org/licenses/mit-license.php) © JeffreyTse. test
 
 <!-- External links -->
 
