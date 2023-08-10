@@ -91,12 +91,14 @@ html {
 .site-brand {
   line-height: $header-height;
   margin-right: 50px;
-
   .site-brand-inner {
-    @include relative-font-size(1.125);
-    font-weight: $base-font-weight;
-    letter-spacing: -1px;
-    transition: 0.1s filter color;
+    color: var(--text-03, #162A51);
+    font-family: Helvetica;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 27px; /* 135% */
+    letter-spacing: -0.8px;
 
     &, &:visited {
       color: $header-text-color;
@@ -126,9 +128,12 @@ html {
   }
 
   .page-link {
-    line-height: $base-line-height;
-    color: #000;
-    transition: 0.1s ease-in-out;
+    color: var(--text-03, #162A51);
+    font-family: Helvetica;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 27px; /* 180% */
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
@@ -187,8 +192,8 @@ html {
  */
 .site-footer {
   @include relative-font-size(1.0);
-  color: $footer-text-color;
-  background-color: $footer-background-color;
+  color: #FFF;
+  background-color: #1E2342;
   text-align: left;
   transition: background-color 0.2s;
 

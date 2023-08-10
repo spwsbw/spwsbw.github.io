@@ -1,132 +1,67 @@
-/* Media Queries */
-
-@mixin mq-xs {
-  @media (min-width: 320px) {
-    @content;
-  }
-}
-
-@mixin mq-sm {
-  @media (min-width: 480px) {
-    @content;
-  }
-}
-
-@mixin mq-md {
-  @media (min-width: 720px) {
-    @content;
-  }
-}
-
-@mixin mq-lg {
-  @media (min-width: 1000px) {
-    @content;
-  }
-}
-
-$background: #f7f7f7;
-$box-shadow: 0px 1px 22px 4px rgba(0, 0, 0, 0.07);
-$border: 1px solid rgba(191, 191, 191, 0.4);
 $items: 5;
 $rows: ceil($items/2);
-
-/* Card sizing */
-
-$card-height: 400px;
-$card-width: 390px;
-$inner-margin: 15px;
-$number-size: 35px;
-$stagger: 180px;
-$outer-margin: 90px;
-$marker-size: 19px;
-
-/* Colors */
-
-$steps: #46b8e9;
-$colors: #46b8e9,
-#3ee9d1,
-#ce43eb,
-#4d92eb;
-$timeline: #bdbdbd;
-
-/* Calculations */
-
-$container-height: $rows * ($card-height + $outer-margin) + $stagger;
-$container-width: $card-width*2 + $outer-margin*3;
-$head-height: $number-size + 50;
-$body-height: $card-height - $head-height;
-$marker-dist: $card-width + $outer-margin/2 - $marker-size/2;
+$container-height: $rows * 600px + 400px;
 
 /* Placeholders */
 
-@include mq-lg {
-  %arrow {
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 0;
-    border: 1px solid  #CDD0DD;
-  }
-  %marker {
-    position: absolute;
-    content: "";
-    width: $marker-size;
-    height: $marker-size;
-    background-color: $timeline;
-    border-radius: $marker-size;
-    box-shadow: 0px 0px 2px 8px $background;
-  }
+%arrow {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border: 1px solid #CDD0DD;
 }
 
 
 /* Some Cool Stuff */
 
 $counter: $items - $rows + 2;
+
 @for $i from 1 through $rows {
-  .demo-card:nth-child(#{$i*2-1})   { order: $i }
-  .demo-card:nth-child(#{$i*2})     { order: $counter }
+  .card:nth-child(#{$i*2-1}) {
+    order: $i
+  }
+
+  .card:nth-child(#{$i*2}) {
+    order: $counter
+  }
+
   $counter: $counter + 1;
 }
 
-/* Border Box */
-
-* {
-  box-sizing: border-box;
-}
-
-/* Fonts */
-
-body {
-  font-family: Roboto;
-}
-
 #timeline2 {
-  padding: 100px 0;
-  background: $background;
-  border-top: $border;
-  border-bottom: $border;
-  h1 {
+  margin-bottom: 140px;
+
+  .section-title {
     text-align: center;
-    font-size: 3rem;
-    font-weight: 200;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+
+    .section-subheading {
+      color: var(--text-03, #162A51);
+      text-align: center;
+      /* HEL 24 */
+      font-family: Helvetica;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 0.96px;
+    }
   }
-  p.leader {
-    text-align: center;
-    max-width: 90%;
-    margin: auto;
-    margin-bottom: 45px;
-  }
-  .demo-card-wrapper {
+
+  .section-body {
     position: relative;
     margin: auto;
-    @include mq-lg {
-      display: flex;
-      flex-flow: column wrap;
-      width: $container-width;
-      height: $container-height;
-      margin: 0 auto;
+    display: flex;
+    flex-flow: column wrap;
+    width: 1050px;
+    height: $container-height;
+    margin: 0 auto;
+    @include media-query($on-palm) {
+      flex-flow: column;
+      width: 100%;
     }
+
     &::after {
       z-index: 1;
       content: "";
@@ -134,123 +69,177 @@ body {
       top: 0;
       bottom: 0;
       left: 50%;
-      border-left: $border;
-      @include mq-lg {
-        border-left: 1px solid $timeline;
+      border-left: 2px solid #CDD0DD;
+
+      @include media-query($on-palm) {
+        left: 24px;
       }
     }
-    &::before{
-      @extend %marker;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 19px;
+      height: 19px;
+      background-color: #CDD0DD;
+      border-radius: 19px;
       left: 516px;
+
+      @include media-query($on-palm) {
+        left: 17px;
+      }
     }
   }
-  .demo-card {
+
+  .card {
     position: relative;
     display: block;
     margin: 10px auto 80px;
     max-width: 94%;
     z-index: 2;
-    @include mq-sm {
-      max-width: 60%;
-      box-shadow: $box-shadow;
-    }
-    @include mq-md {
-      max-width: 40%;
-    }
-    @include mq-lg {
-      max-width: $card-width;
-      height: $card-height;
-      margin: $outer-margin;
-      margin-top: $outer-margin/2;
-      margin-bottom: $outer-margin/2;
-      &:nth-child(odd) {
-        left: -75px;
-        margin-right: 77px;
-        .head::after {
-          @extend %arrow;
-          border-left-width: 120px;
-          border-left-style: solid;
-          left: 100%;
-        }
-      }
-      &:nth-child(even) {
-        margin-left: 77px;
-        left: 13px;
-        .head::after {
-          @extend %arrow;
-          border-right-width: 120px;
-          border-right-style: solid;
-          right: 100%;
-        }
-      }
-      &:nth-child(2) {
-        margin-top: $stagger;
+    max-width: 390px;
+    height: 510px;
+    margin: 90px;
+    margin-top: 128px;
+    margin-bottom: 45px;
+
+    &:nth-child(odd) {
+      left: -75px;
+      margin-right: 77px;
+
+      .head::after {
+        @extend %arrow;
+        border-left-width: 120px;
+        border-left-style: solid;
+        left: 100%;
       }
     }
+
+    &:nth-child(even) {
+      margin-left: 77px;
+      left: 13px;
+
+      .head::after {
+        @extend %arrow;
+        border-right-width: 120px;
+        border-right-style: solid;
+        right: 100%;
+      }
+    }
+
+    &:nth-child(2) {
+      margin-top: 300px;
+    }
+
     .head {
       position: relative;
       display: flex;
       align-items: center;
+      justify-content: flex-end;
       color: #fff;
       font-weight: 400;
-      .number-box {
-        display: inline;
-        float: left;
-        margin: $inner-margin;
-        padding: 10px;
-        font-size: $number-size;
-        line-height: $number-size;
-        font-weight: 600;
-        background: rgba(0, 0, 0, 0.17);
+
+      &.right {
+        justify-content: flex-start;
       }
-      h2 {
-        text-transform: uppercase;
-        font-size: 1.3rem;
-        font-weight: inherit;
-        letter-spacing: 2px;
-        margin: 0;
-        padding-bottom: 6px;
-        line-height: 1rem;
-        @include mq-sm {
-          font-size: 165%;
-          line-height: 1.2rem;
+
+      .image-contain {
+        width: 200px;
+        height: 200px;
+        @include media-query($on-palm) {
+          width: 80px;
+          height: 80px;
         }
-        span {
-          display: block;
-          font-size: 0.6rem;
-          margin: 0;
-          @include mq-sm {
-            font-size: 0.8rem;
+
+        img {
+          width: 200px;
+          height: 200px;
+          border-radius: 100%;
+          @include media-query($on-palm) {
+            width: 80px;
+            height: 80px;
           }
         }
       }
     }
-    .body {
-      background: #fff;
-      border: $border;
-      border-top: 0;
-      padding: $inner-margin;
-      @include mq-lg {
-        height: $body-height;
-      }
-      p {
-        font-size: 14px;
-        line-height: 18px;
-        margin-bottom: $inner-margin;
-      }
-      img {
-        display: block;
-        width: 100%;
+
+    .date {
+      color: var(--text-04, #E5F1FC);
+      font-family: Poppins;
+      font-size: 70px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 84px;
+      margin-top: -72px;
+      z-index: 999;
+      position: relative;
+      float: left;
+
+      &.right {
+        float: right;
       }
     }
-    @for $i from 1 through $items {
-      &--step#{$i} {
-        $color: nth($colors, ((($i - 1) % 4) + 1));
-        background-color: $color;
-        .head::after {
-          border-color: $color;
+
+    .body {
+      padding: 28px 0;
+      height: 425px;
+
+      &.right {
+        padding-left: 59px;
+
+        p {
+          padding-right: 0px;
+        }
+      }
+
+      .title {
+        width: 250px;
+        color: var(--text-01, #222);
+        font-family: Helvetica;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 36.4px;
+        /* 140% */
+      }
+
+      .seperator {
+        margin-top: 28px;
+        margin-bottom: 30px;
+        width: 48px;
+        height: 2px;
+        background: #444;
+      }
+
+      p {
+        padding-right: 50px;
+        color: var(--text-02, #444);
+        font-family: Helvetica;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 28.8px;
+
+        /* 180% */
+        strong {
+          color: var(--text-02, #444);
+          font-family: Helvetica;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 28.8px;
         }
       }
     }
   }
+  .end {
+    margin:auto;
+    width: 19px;
+    height: 19px;
+    border-radius: 100%;
+    background-color: #CDD0DD;
+    @include media-query($on-palm) {
+      margin: 0 0 0 17px;
+    }
+  }  
 }
