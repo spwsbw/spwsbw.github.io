@@ -29,6 +29,18 @@ $counter: $items - $rows + 2;
   $counter: $counter + 1;
 }
 
+@include media-query($on-palm) {
+  @for $i from 1 through $rows {
+    .card:nth-child(#{$i*2-1}) {
+      order: unset
+    }
+  
+    .card:nth-child(#{$i*2}) {
+      order: unset
+    }
+  } 
+}
+
 #timeline2 {
   margin-bottom: 140px;
 
@@ -87,7 +99,7 @@ $counter: $items - $rows + 2;
       left: 516px;
 
       @include media-query($on-palm) {
-        left: 17px;
+        left: 16px;
       }
     }
   }
@@ -103,12 +115,18 @@ $counter: $items - $rows + 2;
     margin: 90px;
     margin-top: 128px;
     margin-bottom: 45px;
+    @include media-query($on-palm) {
+      height:100%;
+    }
 
     &:nth-child(odd) {
       left: -75px;
       margin-right: 77px;
       @include media-query($on-palm) {
         left: 0px;
+        margin-top: 45px;
+        margin-bottom: 0px;
+        margin-right: 0px;
       }
 
       .head::after {
@@ -126,6 +144,11 @@ $counter: $items - $rows + 2;
     &:nth-child(even) {
       margin-left: 77px;
       left: 13px;
+      @include media-query($on-palm) {
+        margin-top: 45px;
+        margin-bottom: 0px;
+        margin-right: 0px;
+      }
 
       .head::after {
         @extend %arrow;
@@ -141,6 +164,11 @@ $counter: $items - $rows + 2;
 
     &:nth-child(2) {
       margin-top: 300px;
+      @include media-query($on-palm) {
+        margin-top: 45px;
+        margin-bottom: 0px;
+        margin-right: 0px;
+      }
     }
 
     .head {
@@ -195,6 +223,8 @@ $counter: $items - $rows + 2;
       }
       @include media-query($on-palm) {
         font-size: 50px;
+        left: 28px;
+        margin-top: -63px;
         &.right {
           float: left;
         }
@@ -278,7 +308,7 @@ $counter: $items - $rows + 2;
     border-radius: 100%;
     background-color: #CDD0DD;
     @include media-query($on-palm) {
-      margin: 0 0 0 17px;
+      margin: 0 0 0 15px;
     }
   }  
 }
