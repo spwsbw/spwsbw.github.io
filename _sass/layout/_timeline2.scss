@@ -21,20 +21,17 @@ $counter: $items - $rows + 2;
   .card:nth-child(#{$i*2-1}) {
     order: $i
   }
-
   .card:nth-child(#{$i*2}) {
     order: $counter
   }
-
   $counter: $counter + 1;
 }
 
-@include media-query($on-palm) {
+@include media-query(1024px) {
   @for $i from 1 through $rows {
     .card:nth-child(#{$i*2-1}) {
       order: unset
     }
-  
     .card:nth-child(#{$i*2}) {
       order: unset
     }
@@ -43,10 +40,16 @@ $counter: $items - $rows + 2;
 
 #timeline2 {
   margin-bottom: 140px;
+  @include media-query(1024px) {
+    margin-bottom: 70px;
+  }
 
   .section-title {
     text-align: center;
     margin-bottom: 40px;
+    @include media-query(1024px) {
+      margin-bottom: 20px;
+    }
 
     .section-subheading {
       color: var(--text-03, #162A51);
@@ -69,7 +72,7 @@ $counter: $items - $rows + 2;
     width: 1050px;
     height: $container-height;
     margin: 0 auto;
-    @include media-query($on-palm) {
+    @include media-query(1024px) {
       flex-flow: column;
       width: 100%;
       height: 100%;
@@ -84,7 +87,7 @@ $counter: $items - $rows + 2;
       left: 50%;
       border-left: 2px solid #CDD0DD;
 
-      @include media-query($on-palm) {
+      @include media-query(1024px) {
         left: 24px;
       }
     }
@@ -98,7 +101,7 @@ $counter: $items - $rows + 2;
       border-radius: 19px;
       left: 516px;
 
-      @include media-query($on-palm) {
+      @include media-query(1024px) {
         left: 16px;
       }
     }
@@ -108,21 +111,23 @@ $counter: $items - $rows + 2;
     position: relative;
     display: block;
     margin: 10px auto 80px;
-    max-width: 94%;
     z-index: 2;
     max-width: 390px;
     height: 510px;
     margin: 90px;
     margin-top: 128px;
     margin-bottom: 45px;
-    @include media-query($on-palm) {
+    @include media-query(1024px) {
       height:100%;
+      max-width: 100%;
+      margin: 55px;
+      padding-right: 30px;
     }
 
     &:nth-child(odd) {
       left: -75px;
       margin-right: 77px;
-      @include media-query($on-palm) {
+      @include media-query(1024px) {
         left: 0px;
         margin-top: 45px;
         margin-bottom: 0px;
@@ -134,8 +139,9 @@ $counter: $items - $rows + 2;
         border-left-width: 120px;
         border-left-style: solid;
         left: 100%;
-        @include media-query($on-palm) {
-          left: -65px;
+        @include media-query(1024px) {
+          left: -30px;
+          border-left-width: 60px;
           z-index: -1;
         }
       }
@@ -144,10 +150,12 @@ $counter: $items - $rows + 2;
     &:nth-child(even) {
       margin-left: 77px;
       left: 13px;
-      @include media-query($on-palm) {
+      @include media-query(1024px) {
         margin-top: 45px;
         margin-bottom: 0px;
         margin-right: 0px;
+        margin-left: 55px;
+        left: 0px;
       }
 
       .head::after {
@@ -155,8 +163,9 @@ $counter: $items - $rows + 2;
         border-right-width: 120px;
         border-right-style: solid;
         right: 100%;
-        @include media-query($on-palm) {
-          left: -65px;
+        @include media-query(1024px) {
+          left: -30px;
+          border-right-width: 60px;
           z-index: -1;
         }
       }
@@ -164,10 +173,11 @@ $counter: $items - $rows + 2;
 
     &:nth-child(2) {
       margin-top: 300px;
-      @include media-query($on-palm) {
+      @include media-query(1024px) {
         margin-top: 45px;
         margin-bottom: 0px;
         margin-right: 0px;
+        margin-left: 55px;
       }
     }
 
@@ -178,7 +188,7 @@ $counter: $items - $rows + 2;
       justify-content: flex-end;
       color: #fff;
       font-weight: 400;
-      @include media-query($on-palm) {
+      @include media-query(1024px) {
         justify-content: flex-start;
       }
 
@@ -189,7 +199,7 @@ $counter: $items - $rows + 2;
       .image-contain {
         width: 200px;
         height: 200px;
-        @include media-query($on-palm) {
+        @include media-query(1024px) {
           width: 80px;
           height: 80px;
         }
@@ -198,7 +208,7 @@ $counter: $items - $rows + 2;
           width: 200px;
           height: 200px;
           border-radius: 100%;
-          @include media-query($on-palm) {
+          @include media-query(1024px) {
             width: 80px;
             height: 80px;
           }
@@ -221,10 +231,11 @@ $counter: $items - $rows + 2;
       &.right {
         float: right;
       }
-      @include media-query($on-palm) {
+      @include media-query(1024px) {
         font-size: 50px;
+        line-height: 0px;
         left: 28px;
-        margin-top: -63px;
+        margin-top: -21px;
         &.right {
           float: left;
         }
@@ -260,6 +271,10 @@ $counter: $items - $rows + 2;
         width: 48px;
         height: 2px;
         background: #444;
+        @include media-query(1024px) {
+          margin-top: 14px;
+          margin-bottom: 15px;
+        }
       }
 
       p {
@@ -281,18 +296,21 @@ $counter: $items - $rows + 2;
           line-height: 28.8px;
         }
       }
-      @include media-query($on-palm) {
-        padding: 12px 0;
+      @include media-query(1024px) {
+        padding: 5px 0px 0px 30px;
         height: fit-content;
   
         &.right {
-          padding: 12px 0;
+          padding: 5px 0px 0px 30px;
+          height: fit-content;
         }
         .title {
           font-size: 20px;
+          width: 100%;
         }
         p {
           font-size: 14px;
+          padding-right: 0px;
           strong {
             font-size: 14px;
           }
@@ -307,7 +325,7 @@ $counter: $items - $rows + 2;
     height: 19px;
     border-radius: 100%;
     background-color: #CDD0DD;
-    @include media-query($on-palm) {
+    @include media-query(1024px) {
       margin: 0 0 0 15px;
     }
   }  

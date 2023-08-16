@@ -1,7 +1,10 @@
 #projects {
     margin-top: 100px;
     margin-bottom: 180px;
-    
+    @include media-query(1024px) {
+        margin-top: 40px;
+        margin-bottom: 60px;
+    }
     .section-title {
         text-align: center;
         margin-bottom: 30px;
@@ -26,6 +29,9 @@
             &:hover {
                 box-shadow: 0px 0px 13px 4px rgba(0, 113, 227, 0.40);
             }
+            @include media-query(1024px) {
+                width: 300px;
+            }
             @include media-query(600px) {
                 width: 90%;
             }
@@ -38,6 +44,9 @@
                 position: relative;
                 z-index: 2;
                 padding: 40px 28px 0px 28px;
+                @include media-query(1024px) {
+                    padding: 24px 20px 0px 20px;
+                }
                 .card_title {
                     color: var(--text-01, #222);
                     text-align: center;
@@ -48,8 +57,9 @@
                     font-weight: 400;
                     line-height: normal;
                     margin-bottom: 28px;
-                    @include media-query(600px) {
+                    @include media-query(1024px) {
                         font-size: 24px;
+                        margin-bottom: 18px;
                     }
                 }
                 .card_text {
@@ -60,7 +70,7 @@
                     font-style: normal;
                     font-weight: 400;
                     line-height: 24px; /* 150% */
-                    @include media-query(600px) {
+                    @include media-query(1024px) {
                         width: 100%;
                         font-size: 14px;
                     }
@@ -68,6 +78,9 @@
             }
             .card_footer {
                 padding: 32px 28px 28px 28px;
+                @include media-query(1024px) {
+                    padding: 24px 20px 24px 20px;
+                }
                 .detail_button {
                     height: 49px;
                     display: flex;

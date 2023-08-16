@@ -2,9 +2,13 @@
     background: var(--bg-02, #F4F5F8);
     padding-top: 100px;
     padding-bottom: 100px;
+    @include media-query(1024px) {
+        padding-top: 40px;
+        padding-bottom: 0px;
+    }
     .section-title {
         text-align: center;
-        margin-bottom: 8px;
+        margin-bottom: 56px;
         .section-subheading {
             color: var(--text-03, #162A51);
             text-align: center;
@@ -24,14 +28,18 @@
         flex-direction: column;
         .skill {
             width: 1024px;
-            margin-top: 64px;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
-            border-bottom: 1px solid #CDD0DD;
             @include media-query(1024px) {
                 width: 90%;
+            }
+            &::after {
+                border: 1px solid #CDD0DD;
+                content: "";
+                width: 100%;
+                margin-bottom: 64px 
             }
             .skill-img {
                 display: flex;

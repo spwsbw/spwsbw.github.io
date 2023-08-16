@@ -5,12 +5,9 @@
         text-align: center;
         margin-bottom: 40px;
         .section-subheading {
-            color: var(--text-03, #162A51);
+            color: #162A51;
             text-align: center;
-            /* HEL 24 */
-            font-family: Helvetica;
             font-size: 24px;
-            font-style: normal;
             font-weight: 700;
             line-height: normal;
             letter-spacing: 0.96px;
@@ -27,71 +24,80 @@
             align-items: center;
             justify-content: center;
             gap: 24px;
-            @include media-query(1024px) {
-                flex-wrap: wrap;
-            }
             .value {
-                border: 1px solid var(--line-01, #CDD0DD);
+                border: 1px solid #CDD0DD;
                 width: 500px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                @include media-query($on-palm) {
-                    width: 90%;
-                }
                 .value-icon {
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     width: 130px;
                     height: 130px;
-                    background-color: var(--text-04, #E5F1FC);;
+                    background-color: #E5F1FC;
                     border-radius: 100%;
                     margin-top: 25px;
                     margin-bottom: 32px;
-                    @include media-query($on-palm) {
-                        margin-top: 20px;
-                        margin-bottom: 16px;
-                        width: 80px;
-                        height: 80px;
-                    }
                 }
                 .value-desc {
                     text-align: center;
                     margin-bottom: 25px;
-                    @include media-query($on-palm) {
-                        padding: 10px;
-                        margin-bottom: 10px;
-                    }
                     .value-desc-title {
-                        color: var(--text-01, #222);
+                        color: #222;
                         text-align: center;
-                        /* HEL 22B */
-                        font-family: Helvetica;
                         font-size: 22px;
-                        font-style: normal;
                         font-weight: 700;
                         line-height: normal;
                         margin-bottom: 24px;
-                        @include media-query($on-palm) {
-                            font-size: 18px;
-                        }
                     }
                     .value-desc-content {
-                        color: var(--text-02, #444);
+                        color: #444;
                         text-align: center;
                         width: 90%;
                         margin: auto;
-                        /* HEL 18 */
-                        font-family: Helvetica;
                         font-size: 18px;
-                        font-style: normal;
                         font-weight: 400;
-                        line-height: 28.8px; /* 160% */
-                        @include media-query($on-palm) {
+                        line-height: 28.8px;
+                    }
+                }
+            }
+        }
+    }
+    @include media-query(1024px) {
+        padding-top: 40px;
+        padding-bottom: 60px;
+        .section-body {
+            .value-row {
+                flex-wrap: wrap;
+                .value {
+                    width: 350px;
+                    .value-icon {
+                        margin-top: 20px;
+                        margin-bottom: 8px;
+                        width: 80px;
+                        height: 80px;
+                    }
+                    .value-desc {
+                        margin-bottom: 20px;
+                        .value-desc-title {
+                            font-size: 18px;
+                            margin-bottom: 12px;
+                        }
+                        .value-desc-content {
                             font-size: 14px;
                         }
                     }
+                }
+            }
+        }    
+    }
+    @include media-query($on-palm) {
+        .section-body {
+            .value-row {
+                .value {
+                    width: 90%;
                 }
             }
         }
