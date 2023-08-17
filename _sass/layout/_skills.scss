@@ -1,21 +1,14 @@
 #skills {
-    background: var(--bg-02, #F4F5F8);
+    background: #F4F5F8;
     padding-top: 100px;
     padding-bottom: 100px;
-    @include media-query(1024px) {
-        padding-top: 40px;
-        padding-bottom: 0px;
-    }
     .section-title {
         text-align: center;
         margin-bottom: 56px;
         .section-subheading {
-            color: var(--text-03, #162A51);
+            color: #162A51;
             text-align: center;
-            /* HEL 24 */
-            font-family: Helvetica;
             font-size: 24px;
-            font-style: normal;
             font-weight: 700;
             line-height: normal;
             letter-spacing: 0.96px;
@@ -32,9 +25,6 @@
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
-            @include media-query(1024px) {
-                width: 90%;
-            }
             &::after {
                 border: 1px solid #CDD0DD;
                 content: "";
@@ -48,53 +38,61 @@
                 gap: 20px;
                 margin-bottom: 40px;
                 .img-box {
-                    background: var(--white, #FFF);
+                    background: #FFF;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     &.fit {
                         width: 72px;
                         height: 72px;
-                        @include media-query(1024px) {
-                            width: 54px;
-                            height: 54px;
-                        }
                     }
                     &.pad {
                         width: 60px;
                         height: 60px;
                         padding: 6px;
-                        @include media-query(1024px) {
+                    }
+                }
+            }
+            .skill-title {
+                color: #222;
+                font-size: 32px;
+                font-weight: 400;
+                line-height: normal;
+                margin-bottom: 28px;
+            }
+            .skill-desc {
+                width: 80%;
+                margin-bottom: 60px;
+                color: #444;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 28.8px;
+            }
+        }
+    }
+    @include media-query(1024px) {
+        padding-top: 40px;
+        padding-bottom: 0px;
+        .section-body {
+            .skill {
+                width: 90%;
+                .skill-img {
+                    .img-box {
+                        &.fit {
+                            width: 54px;
+                            height: 54px;
+                        }
+                        &.pad {
                             width: 48px;
                             height: 48px;
                             padding: 3px;
                         }
                     }
                 }
-            }
-            .skill-title {
-                color: var(--text-01, #222);
-                /* HEL 32 */
-                font-family: Helvetica;
-                font-size: 32px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
-                margin-bottom: 28px;
-                @include media-query(1024px) {
+                .skill-title {
                     font-size: 24px;
                 }
-            }
-            .skill-desc {
-                width: 80%;
-                margin-bottom: 60px;
-                color: var(--text-02, #444);
-                font-family: Helvetica;
-                font-size: 18px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 28.8px; /* 160% */
-                @include media-query(1024px) {
+                .skill-desc {
                     width: 100%;
                     font-size: 14px;
                 }

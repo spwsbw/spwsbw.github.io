@@ -21,9 +21,17 @@
       {%- assign post_url = post.url | relative_url -%}
 
       <h2 class="post-title">
+        {% capture nowunix %}{{"now" | date: "%s" | minus : 604800}}{% endcapture %}
+        {% capture posttime %}{{ post.date | date: '%s' }}{% endcapture %}
+        {% if posttime > nowunix %}
+        <a class="post-link new" href="{{ post_url }}">
+          {{ post.title | escape }}
+        </a>
+        {% else %}
         <a class="post-link" href="{{ post_url }}">
           {{ post.title | escape }}
         </a>
+        {% endif %}
       </h2>
       <div class="post-meta">
         <span class="post-date"><i class="fa fa-calendar"></i> {{ post.date | date: date_format }}</span>

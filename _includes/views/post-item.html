@@ -7,7 +7,15 @@
 {% assign date_format = site.yat.date_format | default: "%b %-d, %Y" %}
 <span class="post-meta">{{ post.date | date: date_format }}</span>
 <span>
+  {% capture nowunix %}{{"now" | date: "%s" | minus : 604800}}{% endcapture %}
+  {% capture posttime %}{{ post.date | date: '%s' }}{% endcapture %}
+  {% if posttime > nowunix %}
+  <a class="post-link new" href="{{ post.url | relative_url }}">
+    {{ post.title | escape }}
+  </a>
+  {% else %}
   <a class="post-link" href="{{ post.url | relative_url }}">
     {{ post.title | escape }}
   </a>
+  {% endif %}
 </span>

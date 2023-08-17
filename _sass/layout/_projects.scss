@@ -1,10 +1,6 @@
 #projects {
     margin-top: 100px;
     margin-bottom: 180px;
-    @include media-query(1024px) {
-        margin-top: 40px;
-        margin-bottom: 60px;
-    }
     .section-title {
         text-align: center;
         margin-bottom: 30px;
@@ -29,71 +25,43 @@
             &:hover {
                 box-shadow: 0px 0px 13px 4px rgba(0, 113, 227, 0.40);
             }
-            @include media-query(1024px) {
-                width: 300px;
-            }
-            @include media-query(600px) {
-                width: 90%;
-            }
             .card_content {
-                background: var(--white, #FFF);
-                border-radius: 10px 10px 0px 0px;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
                 position: relative;
-                z-index: 2;
+                background: #FFF;
                 padding: 40px 28px 0px 28px;
-                @include media-query(1024px) {
-                    padding: 24px 20px 0px 20px;
-                }
+                border-radius: 10px 10px 0px 0px;
+                z-index: 2;
                 .card_title {
-                    color: var(--text-01, #222);
+                    color: #222;
                     text-align: center;
-                    /* HEL 28 */
-                    font-family: Helvetica;
                     font-size: 28px;
-                    font-style: normal;
                     font-weight: 400;
                     line-height: normal;
                     margin-bottom: 28px;
-                    @include media-query(1024px) {
-                        font-size: 24px;
-                        margin-bottom: 18px;
-                    }
                 }
                 .card_text {
-                    color: var(--text-02, #444);
-                    /* HEL 16_24 */
-                    font-family: Helvetica;
+                    color: #444;
                     font-size: 16px;
-                    font-style: normal;
                     font-weight: 400;
-                    line-height: 24px; /* 150% */
-                    @include media-query(1024px) {
-                        width: 100%;
-                        font-size: 14px;
-                    }
+                    line-height: 24px;
                 }
             }
             .card_footer {
                 padding: 32px 28px 28px 28px;
-                @include media-query(1024px) {
-                    padding: 24px 20px 24px 20px;
-                }
                 .detail_button {
-                    height: 49px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    height: 49px;
                     border-radius: 104px;
                     background: #0071E3;
                     a {
-                        color: var(--white, #FFF);
+                        color: #FFF;
                         text-align: center;
-                        font-family: Helvetica;
                         font-size: 15px;
-                        font-style: normal;
                         font-weight: 700;
                         line-height: normal;
                     }
@@ -111,9 +79,36 @@
                 &::before {
                     content: "";
                     display: block;
-                    padding-top: 56.25%; // 16:9 aspect ratio
+                    padding-top: 56.25%;
                 }
             }
         }
     }
+    @include media-query(1024px) {
+        margin-top: 40px;
+        margin-bottom: 60px;
+        .section-body {
+            .card {
+                width: 300px;
+                .card_content {
+                    padding: 24px 20px 0px 20px;
+                    .card_title {
+                        font-size: 24px;
+                        margin-bottom: 18px;
+                    }
+                    .card_text {
+                        width: 100%;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+    @include media-query(600px) {
+        .section-body {
+            .card {
+                width: 90%;
+            }
+        }
+    }   
 }
